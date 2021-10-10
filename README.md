@@ -1,50 +1,86 @@
 [![.NET](https://github.com/Prigan/dotnet-webapp-deepti/actions/workflows/Basic%20CI%20and%20CD.yml/badge.svg)](https://github.com/Prigan/dotnet-webapp-deepti/actions/workflows/Basic%20CI%20and%20CD.yml)
 
-# Dot - A Developer Search System -  Application URL: http://pgdotapp.azurewebsites.net
-In this coding challenge you will build a simple webapp called "Dot" that uses the Github REST API to load user data.
-The challenge is designed to test your thinking, process, and ability to put together an application.
+# DöT - GitHub developer search app
 
-# Requirements
+A user friendly application that allows anyone to search for git users by their username and add/remove them as favorites.
+An offline mode for the application is also available. 
+The application integrates into the github workflow by establishing a CI and CD pipeline and is hosted on Microsoft Azure websites, accessible at https://pgdotapp.azurewebsites.net/
 
-## Source Control - Git
-We will be using git to manage our repositories and integrate with our pipeline. In this challenge, we are looking to see your ability to:
+# Technical description
 
-1. Fork this github repo.
-2. Create branches for new features/ideas. You are free to organize as you see fit. We want to see your process.
-3. Create commits with comments
-4. Push changes
-5. Merge branches to master
+This project uses the MVC(Model-Based View) architecture design patterns, repository pattern, unit of work, singletom pattern and dependency injection to achieve functionality.
 
-## Building the Web App
-In this challenge, you will:
+> The project uses Web Layer architecture:
+    -  Presentation layer
+    -  Business layer
+    -  DataAccess layer
 
-1. Generate a new dotnet app.
-2. Use webapp or mvc (your choice)
-3. Add all 5 CRUD operations in the webapp (use localStorage, no need for a DB unless you want to - Bonus)
-4. You have an option to leverage a frontend framework such as Vue/Angular or keep things simple with dotnet views/razor pages. 
-5. Leverage the Github REST API for your data.
+The application uses InMemory database to allow rapid prototyping and data storage. 
 
-## Github REST API
-Our applications are always in need of intergration, you will leverage the Github API in this case (focus on Users) to get the data you need.
-[Github API Docs](https://docs.github.com/en/rest)
+When the application fires up, the app attempts to contact the following GitHub api https://api.github.com/users - automatic! for users to seed the database. Upon success a list of users are retreived, each user may or may not have a list of followers.
 
-## Documentation
-At the end you will commit a file to this repo called "MyThinking.md". Please briefly explain at a high level how you approached each requirement. 
-You can also include a section of things you would do if you had more time or would like to learn and explore.
+	To demonstrate fetching large datasets, the app also navigates to each follower user and extracts the login id to be stored with each user in addition to some the user's own properties.
+	
+The search feature utilizes this method via the api https://api.github.com/search/users?q= - automatic! to fetch users whose login id matches the query.
 
-## Sample Idea (you are not limited to this)
-An example of using this data efficiently:
-- I can search for a User (Home Page with a Form, for example) - you can use AJAX if you want.
-- I can save the User profile to my favorites (or similar feature to save) [CREATE]
-- I can view the User profile [READ]
-- When I view the User Profile from my favorites (or similar area), I can add a note (with ability to edit) to the User I have saved in my favorites [UPDATE]
-- I can delete the User from my favorites [DELETE]
-- I can view a list of  repos from the user [BONUS - API call with large datasets, how will you handle loading/caching?) 
+The landing page list the users in the database, the search results are also displayed using the same view to maximize reuse. 
 
-## Checklist
+The search results allow the user to add a new user to the database. Users in the application can be marked as favorites too.
 
-- [ ] Did you use git?
-- [ ] Generate a dotnet app with all CRUD operations?
-- [ ] Add proper code styling and linting?
-- [ ] Use the Github API?
-- [ ] Complete the documentation?
+Since the github api limits each IP address to a maximum of 5000 requests per hour https://docs.github.com/en/developers/apps/building-github-apps/rate-limits-for-github-apps - automatic! , the user/developer has the option to toggle settings to mimic the online github api by reading sample user data from a file.
+
+## Technologies used:
+
+ASP.NET Core MVC (.NET 3.1), ASP.NET Core Razor Pages, Dependency Injection, Entity Framework Core, InMemory database, CRUD Operations, Unit tests, JQuery AJAX, Plain javascript, Responsive design, CI and CD using GitHub Azure integrations.
+
+## Requirements to develop
+
+- Visual studio 2019 for web development
+- .NET Core 3.1 SDK
+- Internet connection
+- Valid and available github requests limit for your IP address
+
+### Tools used:
+
+	- Microsoft Visual Studio 2019 IDE
+	- Git Bash
+	- GitHub Desktop
+	- Code formatting using Code Maid
+	- Notepad
+
+# Settings
+
+```
+Inside appsettings.json
+------------------------
+
+IsLive : true/false
+
+```
+
+# Known issues
+
+1. When the application is deployed or run using the 
+---
+IsLive : true
+---
+setting, the landing page may display the message 
+> No users loaded, please try again later.
+This happens when the github api rate limit is exceeded or when there is an error fetching data.
+
+1. When the application is deployed or run using the 
+---
+IsLive : false
+--- 
+new searches may not fetch data if the rate limit is exceeded.
+	
+# How to launch the project 
+
+Review the settings 
+Press Ctrl+F5
+
+# Things I would do if I had more time
+
+- Introduce a worker service to perform recursive data fetching from github
+- Convert to a Angular based SPA application
+- Lazy loading of users
