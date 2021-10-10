@@ -1,10 +1,15 @@
 # My Thought Process
 
 Web Application : MVC Application
+
 Data Base       : In Memory SQL Server (DotDatabase)
+
 Data Access ORM : EntityFramework
+
 Data Mapping    : Via Auto Mapper
+
 CI              : GitHub Workflows
+
 CD              : Azure 
 
 # Technical description
