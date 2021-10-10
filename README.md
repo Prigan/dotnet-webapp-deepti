@@ -31,7 +31,7 @@ Since the github api limits each IP address to a maximum of 5000 requests per ho
 
 ## Technologies used:
 
-ASP.NET Core MVC (.NET 3.1), ASP.NET Core Razor Pages, Dependency Injection, Entity Framework Core, InMemory database, CRUD Operations, Unit tests, JQuery AJAX, Plain javascript, Responsive design, CI and CD using GitHub Azure integrations.
+ASP.NET Core MVC (.NET 3.1), ASP.NET Core Razor Pages, Dependency Injection, Entity Framework Core, InMemory database, CRUD Operations, NUnit tests, JQuery AJAX, Plain javascript, Responsive design, CI and CD using GitHub - Azure integrations.
 
 ## Requirements to develop
 
@@ -84,3 +84,4 @@ Press Ctrl+F5
 - Introduce a worker service to perform recursive data fetching from github
 - Convert to a Angular based SPA application
 - Lazy loading of users
+- Use Azure SQL Server instead of InMemeorySQl
