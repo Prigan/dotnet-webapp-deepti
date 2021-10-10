@@ -1,4 +1,6 @@
-﻿namespace Dot.Data.Domain
+﻿using Dot.Data.Domain;
+
+namespace Dot.Data.Domain
 {
     public class Follower : BaseEntity
     {

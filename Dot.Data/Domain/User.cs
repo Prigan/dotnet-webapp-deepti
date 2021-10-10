@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Dot.Data.Domain;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -19,5 +20,7 @@ namespace Dot.Data.Domain
 
         public bool IsFavorite { get; set; }
         public List<Follower> Followers { get; set; } = new List<Follower>();
+
+        public string Html_Url { get; set; }
     }
 }

@@ -21,6 +21,5 @@ C:\Users\priya\source\repos\Priu\Assignment\dotnet-webapp\Dot.Services\obj\Debug
 C:\Users\priya\source\repos\Priu\Assignment\dotnet-webapp\Dot.Services\obj\Debug\netcoreapp3.1\Dot.Services.AssemblyInfoInputs.cache
 C:\Users\priya\source\repos\Priu\Assignment\dotnet-webapp\Dot.Services\obj\Debug\netcoreapp3.1\Dot.Services.AssemblyInfo.cs
 C:\Users\priya\source\repos\Priu\Assignment\dotnet-webapp\Dot.Services\obj\Debug\netcoreapp3.1\Dot.Services.csproj.CoreCompileInputs.cache
-C:\Users\priya\source\repos\Priu\Assignment\dotnet-webapp\Dot.Services\obj\Debug\netcoreapp3.1\Dot.Services.csproj.CopyComplete
 C:\Users\priya\source\repos\Priu\Assignment\dotnet-webapp\Dot.Services\obj\Debug\netcoreapp3.1\Dot.Services.dll
 C:\Users\priya\source\repos\Priu\Assignment\dotnet-webapp\Dot.Services\obj\Debug\netcoreapp3.1\Dot.Services.pdb

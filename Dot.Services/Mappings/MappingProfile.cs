@@ -16,6 +16,9 @@ namespace Dot.Services.Mappings
                                     dest.AvatarUrl,
                                     opt => opt.MapFrom(src => src.Avatar_Url))
                 .ForMember(dest =>
+                                    dest.HtmlUrl,
+                                    opt => opt.MapFrom(src => src.Html_Url))
+                .ForMember(dest =>
                                     dest.Followers,
                                     opt => opt.MapFrom(src => src.Followers))
                 .ReverseMap();

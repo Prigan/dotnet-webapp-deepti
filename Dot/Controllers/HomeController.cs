@@ -35,6 +35,11 @@ namespace Dot.Controllers
             return View(_dotService.GetAllUsers());
         }
 
+        /// <summary>
+        /// Uses the GitHub search user api to fetch users with a mathcing username
+        /// </summary>
+        /// <param name="query"></param>
+        /// <returns>A list of searched results</returns>
         public async Task<IActionResult> SearchAsync(string query)
         {
             query = $"{_configuration.GetSection("GitHubSearchUserApiBase").Value}{query}";
@@ -43,15 +48,21 @@ namespace Dot.Controllers
             return View("Index", searchedProfiles);
         }
 
+        /// <summary>
+        /// Adds a user if user does not exist, else updates the user
+        /// </summary>
+        /// <param name="user"></param>
+        /// <returns>Http 200 with message if successful, Http 400 if there was an error</returns>
         [HttpPost, ValidateAntiForgeryToken]
         public IActionResult AddUser(UserVm user)
         {
-            if(user != null && user.Id > 0)
+            if (user == null && user.Id <= 0)
             {
-                _dotService.AddUser(user);
+                return BadRequest();
             }
 
-            return RedirectToAction("Error", new { Message = "Invalid user data, please contact your administrator" });
+            _dotService.AddUser(user);
+            return Ok("Added");
         }
 
         /// <summary>
@@ -61,9 +72,9 @@ namespace Dot.Controllers
         public void ToggleFavorite(int id)
         {
             var user = _dotService.FindUserById(id);
-            if(user == null)
+            if (user == null)
             {
-               RedirectToAction("Error", "Index");
+                RedirectToAction("Error", "Index");
             }
             else
             {
@@ -72,6 +83,11 @@ namespace Dot.Controllers
             }
         }
 
+        /// <summary>
+        /// Removed a user from the database
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns>Redirection to appropriate page</returns>
         public IActionResult Delete(int id)
         {
             if (!_dotService.DeleteUserById(id))

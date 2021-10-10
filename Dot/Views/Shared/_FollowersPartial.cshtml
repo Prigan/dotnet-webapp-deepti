@@ -3,15 +3,15 @@
 @{
     var gitUserUrlBase = "https://github.com";
 
-    var toolTipContent = $"{Model.Count} Followers <hr/>";
+    var toolTipContent = $"{Model.Count} Followers <hr />";
     toolTipContent += $"<ul class='list-unstyled'>";
     foreach (var follower in Model.Select(f => f.Login).ToList())
     {
-        toolTipContent += $"<li><a class='readableLinks' href='{gitUserUrlBase}/{follower}'>{follower}</a></li>";
+        toolTipContent += $"<li><a class='readableLinks' href='{gitUserUrlBase}/{follower}' target='_blank'>{follower}</a></li>";
     }
     toolTipContent += "</ul>";
 }
 
-<li class="followersLi" title="@toolTipContent" data-toggle="tooltip" data-html="true" >
+<li class="followersLi" title="@toolTipContent" data-toggle="tooltip" data-html="true">
     <i class="fa fa-users"></i> <span>@Model.Count</span>
 </li>

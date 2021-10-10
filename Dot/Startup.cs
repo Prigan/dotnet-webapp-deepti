@@ -40,7 +40,7 @@ namespace Dot
 
             services.AddDbContext<DotContext>(options =>
             {
-                options.UseInMemoryDatabase(databaseName : "DotDatabase");
+                options.UseInMemoryDatabase(databaseName: "DotDatabase");
             }, ServiceLifetime.Scoped);
 
             services.AddScoped<ILogger>(svc => svc.GetRequiredService<ILogger<DotService>>());

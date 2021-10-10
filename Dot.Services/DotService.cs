@@ -34,9 +34,10 @@ namespace Dot.Services
     /// </summary>
     public class DotService : IDotService
     {
-        IDotRepository _dotRepository;
+        private IDotRepository _dotRepository;
         private readonly IMapper _mapper;
         private readonly ILogger _logger;
+
         public DotService(IDotRepository dotRepository, IMapper mapper, ILogger logger)
         {
             _dotRepository = dotRepository;
@@ -55,9 +56,9 @@ namespace Dot.Services
             {
                 var user = _mapper.Map<User>(userVm);
                 var existingUser = _dotRepository.Get(userVm.Id);
-                if(existingUser != null)
+                if (existingUser != null)
                 {
-                   return _dotRepository.Update(user);
+                    return _dotRepository.Update(user);
                 }
 
                 return _dotRepository.Add(user);

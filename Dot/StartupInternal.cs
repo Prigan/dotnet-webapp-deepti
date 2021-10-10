@@ -50,7 +50,7 @@ namespace Dot
                             {
                                 if (!string.IsNullOrEmpty(user.Followers_Url))
                                 {
-                                    // fetch login data for all followers
+                                    // fetch data for all followers of this user
                                     var followers = InitializeAppDataAsync(user.Followers_Url, true, isLive, sampleUsers).Result;
                                     user.Followers.AddRange(followers.Select(f => new Follower { Login = f.Login }));
                                 }
