@@ -38,3 +38,15 @@ Since the github api limits each IP address to a maximum of 5000 requests per ho
 ## Technologies used:
 
 ASP.NET Core MVC (.NET 3.1), ASP.NET Core Razor Pages, Dependency Injection, Entity Framework Core,AutoMapper, InMemory database, CRUD Operations, NUnit tests, JQuery AJAX, Plain javascript, Responsive design, CI and CD using GitHub - Azure integrations.
+
+## Checklist
+ Did you use git? - Yes
+ 
+ Generate a dotnet app with all CRUD operations? -Yes
+ 
+ Add proper code styling and linting?-Yes
+ 
+ Use the Github API?-Yes
+ 
+ Complete the documentation?-Yes
+ 
