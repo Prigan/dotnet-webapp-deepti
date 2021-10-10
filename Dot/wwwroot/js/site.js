@@ -23,7 +23,6 @@ function KeepBootstrapTooltipOpen() {
     var hover = false;
     var a = 0;
 
-    //for convenience
     var $TT = $('.followersLi');
     $TT.tooltip({
         selector: "a[rel=tooltip]",
@@ -43,4 +42,21 @@ function KeepBootstrapTooltipOpen() {
     $TT.on('hide.bs.tooltip', function () {
         return !hover;
     })
+}
+
+function PostAddUserForm(formId) {
+    var userForm = $("#" + formId);
+
+    $.ajax({
+        method: "POST",
+        url: "/Home/AddUser/",
+        data: userForm.serialize(),
+        dataType: "text",
+        success: function (msg) {
+            userForm.find(".btn").addClass("active").addClass("bg-success").val(msg); // provide feeback to the user
+        },
+        error: function (err) {
+            console.log("err", err); // keep the user informed about the error
+        }
+    });
 }

@@ -1,9 +1,17 @@
-﻿@{ 
+﻿@{
     Dot.Services.Models.UserVm user = Model;
 }
 
-@using (Html.BeginForm("AddUser", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
+@using (Html.BeginForm(FormMethod.Post, new { id="formAddUser"+user.Id }))
 {
-    <input type="hidden" value="@user" name="user" id="user" />
-    <input type="submit" value="Add" class="btn btn-outline-dark" />
+    @Html.HiddenFor(m => user.AvatarUrl);
+    @Html.HiddenFor(m => user.Followers);
+    @Html.HiddenFor(m => user.Id);
+    @Html.HiddenFor(m => user.IsFavorite);
+    @Html.HiddenFor(m => user.Login);
+    @Html.HiddenFor(m => user.Type);
+    @Html.HiddenFor(m => user.Url);
+    @Html.HiddenFor(m => user.HtmlUrl);
+
+    <input type="button" value="Add" class="btn btn-outline-dark" onclick="PostAddUserForm('formAddUser'+@user.Id)" />
 }
