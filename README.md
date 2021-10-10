@@ -8,7 +8,7 @@ The application integrates into the github workflow by establishing a CI and CD 
 
 # Technical description
 
-This project uses the MVC(Model-Based View) architecture design patterns, repository pattern, unit of work, singletom pattern and dependency injection to achieve functionality.
+This project uses the MVC(Model-Based View) architecture design patterns, repository pattern, unit of work, singleton pattern and dependency injection to achieve functionality.
 
 > The project uses Web Layer architecture:
     -  Presentation layer
@@ -31,13 +31,13 @@ Since the github api limits each IP address to a maximum of 5000 requests per ho
 
 ## Technologies used:
 
-ASP.NET Core MVC (.NET 3.1), ASP.NET Core Razor Pages, Dependency Injection, Entity Framework Core, InMemory database, CRUD Operations, NUnit tests, JQuery AJAX, Plain javascript, Responsive design, CI and CD using GitHub - Azure integrations.
+ASP.NET Core MVC (.NET 3.1), ASP.NET Core Razor Pages, Dependency Injection, Entity Framework Core,AutoMapper, InMemory database, CRUD Operations, NUnit tests, JQuery AJAX, Plain javascript, Responsive design, CI and CD using GitHub - Azure integrations.
 
 ## Requirements to develop
 
 - Visual studio 2019 for web development
 - .NET Core 3.1 SDK
-- Internet connection
+- Azure Account for Deployment
 - Valid and available github requests limit for your IP address
 
 ### Tools used:
@@ -46,7 +46,7 @@ ASP.NET Core MVC (.NET 3.1), ASP.NET Core Razor Pages, Dependency Injection, Ent
 	- Git Bash
 	- GitHub Desktop
 	- Code formatting using Code Maid
-	- Notepad
+	- VisualStudio Code
 
 # Settings
 
@@ -84,4 +84,4 @@ Press Ctrl+F5
 - Introduce a worker service to perform recursive data fetching from github
 - Convert to a Angular based SPA application
 - Lazy loading of users
-- Use Azure SQL Server instead of InMemeorySQl
+- Use Azure SQL Server instead of InMemorySQL
