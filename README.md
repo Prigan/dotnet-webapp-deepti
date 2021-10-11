@@ -14,7 +14,7 @@ https://pgdotapp.azurewebsites.net/
 
 This project uses the MVC(Model-Based View) architecture design patterns, repository pattern, unit of work, singleton pattern and dependency injection to achieve functionality.
 
-> The project uses Web Layer architecture:
+> The project uses n-Tier architecture:
     -  Presentation layer
     -  Business layer
     -  DataAccess layer
