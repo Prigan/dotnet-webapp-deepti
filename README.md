@@ -40,7 +40,7 @@ ASP.NET Core MVC (.NET 3.1), ASP.NET Core Razor Pages, Dependency Injection, Ent
 - Azure Account for Deployment
 - Valid and available github requests limit for your IP address
 
-## Configureation Instructions
+## Configuration Instructions
 
 To Run Locally: 
 
