@@ -40,6 +40,17 @@ ASP.NET Core MVC (.NET 3.1), ASP.NET Core Razor Pages, Dependency Injection, Ent
 - Azure Account for Deployment
 - Valid and available github requests limit for your IP address
 
+## Configureation Instructions
+
+To Run Locally: 
+
+Since the code uses InMemory DB , just download the code and run
+
+For CD:
+
+Modify the publish profile to your publish profile in the .yml file 
+
+
 ### Tools used:
 
 	- Microsoft Visual Studio 2019 IDE
