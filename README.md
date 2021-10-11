@@ -6,6 +6,10 @@ A user friendly application that allows anyone to search for git users by their 
 An offline mode for the application is also available. 
 The application integrates into the github workflow by establishing a CI and CD pipeline and is hosted on Microsoft Azure websites, accessible at https://pgdotapp.azurewebsites.net/
 
+# Application 
+
+https://pgdotapp.azurewebsites.net/
+
 # Technical description
 
 This project uses the MVC(Model-Based View) architecture design patterns, repository pattern, unit of work, singleton pattern and dependency injection to achieve functionality.
